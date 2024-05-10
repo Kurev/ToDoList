@@ -1,0 +1,194 @@
+.ToDo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100vh;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.ToDo-Container{
+    border: 1px solid white;
+    border-top: rgba(141, 250, 247, 0.975);
+    border-radius: 10px;
+    width: 700px;
+    height: 500px;
+    text-align: center;
+    background: white;
+    box-shadow: 0px 0px 30px 0px rgba(2, 250, 242, 0.174);
+}
+
+.ToDo-Container ul{
+    padding-left: 7%;
+    padding-right: 7%;
+}
+
+.Schedule{
+    border-radius: 10px;
+    width: 220px;
+    min-height: 500px;
+    background: linear-gradient(150deg, #58dfebf5 0%, rgba(99,155,232,1) 100%, rgba(254,53,248,1) 100%);
+    color: white;
+    box-shadow: -3px 3px 5px 0px rgba(68, 216, 239, 0.611);
+}
+
+.Schedule h1{
+    width: auto;
+    margin: 20px;
+    font-weight: 650;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.Schedule h3{
+    cursor: pointer;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    min-height: 40px;
+    background: rgb(24, 82, 133);;
+    border-radius: 5px;
+    gap: 8px;
+}
+
+.Schedule h3:hover{
+    background: rgb(12, 45, 73);
+    transition: 0.5s;
+}
+
+.Schedule .tomorrow{
+    margin-bottom: 30px;
+}
+
+form{
+    margin-bottom: 0px;
+    min-height: 220px;
+}
+
+.Schedule h3, form , span{
+    width: auto;
+    margin: 20px;
+    font-weight: 600;
+}
+
+.feedback{
+    color: rgb(255, 255, 255);
+    font-size: 23px;
+}
+
+.text{
+    margin-top: 20px;
+    border: 0;
+    outline: 0;
+    border-radius: 10px;
+    width: 100%;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+span{
+    font-size: 13px;
+}
+
+.btn{
+    margin-top: 10px;
+}
+
+.ToDo-Container h1{
+    color: white;
+    width: auto;
+    min-height: 70px;
+    font-size: 50px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 10px 0px 0px;
+    margin-bottom: 30px;
+    background: rgb(88,223,235);
+    background: linear-gradient(90deg, rgba(88,223,235,0.9585084033613446) 0%, rgba(99,155,232,1) 100%, rgba(254,53,248,1) 100%);
+}
+
+.note{
+    margin: 0;
+    font-size: 25px;
+    color: rgb(0, 191, 255);
+}
+
+.setTime{
+    max-width: 20%;
+    margin-left: -5px;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+    .ToDo{
+        display: flex;
+        flex-direction: column-reverse;
+        margin-top: 380px;
+    }
+
+    .ToDo-Container{
+        width: 700px;
+        min-height: 500px;
+        margin-bottom: 50px;
+    }
+
+    .Schedule{
+        width: 700px;
+        
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .ToDo-Container{
+        width: 600px;
+        min-height: 500px;
+        margin-bottom: 50px;
+    }
+
+    .Schedule{
+        width: 600px;
+        
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .ToDo-Container{
+        width: 350px;
+        min-height: 500px;
+        margin-bottom: 50px;
+    }
+
+    .Schedule{
+        width: 350px;
+        
+    }
+
+    .inputlist, .setTime{
+        font-size: 10px;
+        width: 130px;
+        height: 30px;
+    }
+
+    .btn{
+        font-size: 10px;
+        width: 70px;
+        height: 30px;
+    }
+
+    .note{
+        font-size: 20px;
+    }
+
+    ul li h4{
+        font-size: 13px;
+    }
+
+}
+
+
+
