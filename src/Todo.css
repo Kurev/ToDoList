@@ -124,11 +124,13 @@ span{
     font-size: 20px;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1450px) {
     .ToDo{
         display: flex;
         flex-direction: column-reverse;
-        margin-top: 380px;
+        margin-top: 340px;
+        margin-left: 5%;
+        margin-right: 5%;
     }
 
     .ToDo-Container{
@@ -164,8 +166,7 @@ span{
     }
 
     .Schedule{
-        width: 350px;
-        
+        width: 350px; 
     }
 
     .inputlist, .setTime{
@@ -184,11 +185,51 @@ span{
         font-size: 20px;
     }
 
-    ul li h4{
+    ul li .Time, .delete{
         font-size: 13px;
     }
 
+    .ToDo-Container h1{
+        font-size: 45px;
+    }
 }
 
+@media screen and (max-width: 445px){
+    .ToDo{
+        padding-left: 10%;
+        padding-right: 10%
+    }
 
+    .ToDo-Container{
+        width: 320px;
+        min-height: 500px;
+        margin-bottom: 50px;
+        
+    }
 
+    .Schedule{
+        width: 320px; 
+    }
+
+    .inputlist, .setTime{
+        font-size: 10px;
+        width: 110px;
+        height: 30px;
+    }
+
+    .note{
+        font-size: 13px;
+    }
+
+    .ToDo-Container h1{
+        font-size: 40px;
+    }
+
+    .Schedule h1{
+        font-size: 30px;
+    }
+    
+    ul li .nameToDo{
+        font-size: 15px;
+    }
+}
