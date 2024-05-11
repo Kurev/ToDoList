@@ -39,14 +39,9 @@ function MyComponent() {
         const normalizedText = inputToDo.charAt(0).toUpperCase() + inputToDo.slice(1);
         let timeWithAmPm = inputTime;
     
-        if (!inputTime.includes("AM") && !inputTime.includes("PM")) {
-            const hours = parseInt(inputTime.split(":")[0], 10);
-            if (hours >= 12) {
-                timeWithAmPm += " PM";
-            } else {
-                timeWithAmPm += " AM";
-            }
-        }
+        // Parse inputTime to ensure it's in 12-hour format
+        const parsedTime = new Date(`2000-01-01T${inputTime}`);
+        timeWithAmPm = parsedTime.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
     
         const newActivity = { text: normalizedText, time: timeWithAmPm, timestamp: new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }) };
     
@@ -163,7 +158,7 @@ function MyComponent() {
                         <span onClick={() => handleEmojiClick("🚽")}>🚽</span>
                     </div>
 
-                    <div className="row2">
+                    <div className="row3">
                         <span onClick={() => handleEmojiClick("🚿")}>🚿</span>
                         <span onClick={() => handleEmojiClick("🪥")}>🪥</span>
                         <span onClick={() => handleEmojiClick("🥛")}>🥛</span>
@@ -172,7 +167,7 @@ function MyComponent() {
                         <span onClick={() => handleEmojiClick("💖")}>💖</span>
                     </div>
                     
-                    <div className="row2">
+                    <div className="row4">
                         <span onClick={() => handleEmojiClick("⭐")}>⭐</span>
                         <span onClick={() => handleEmojiClick("🛏️")}>🛏️</span>
                         <span onClick={() => handleEmojiClick("🏨")}>🏨</span>
@@ -181,7 +176,7 @@ function MyComponent() {
                         <span onClick={() => handleEmojiClick("💦")}>💦</span>
                     </div>
 
-                    <div className="row2">
+                    <div className="row5">
                         <span onClick={() => handleEmojiClick("💊")}>💊</span>
                         <span onClick={() => handleEmojiClick("💵")}>💵</span>
                         <span onClick={() => handleEmojiClick("📺")}>📺</span>
