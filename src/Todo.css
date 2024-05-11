@@ -3,7 +3,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    height: 100vh;
+    min-height: 100vh;
     padding-left: 10%;
     padding-right: 10%;
 }
@@ -13,7 +13,7 @@
     border-top: rgba(141, 250, 247, 0.975);
     border-radius: 10px;
     width: 700px;
-    height: 500px;
+    min-height: 500px;
     text-align: center;
     background: white;
     box-shadow: 0px 0px 30px 0px rgba(2, 250, 242, 0.174);
@@ -64,7 +64,6 @@
 }
 
 form{
-    margin-bottom: 0px;
     min-height: 220px;
 }
 
@@ -128,7 +127,8 @@ span{
     .ToDo{
         display: flex;
         flex-direction: column-reverse;
-        margin-top: 340px;
+        margin-top: 15px;
+        margin-bottom: 15px;
         margin-left: 5%;
         margin-right: 5%;
     }
@@ -136,7 +136,7 @@ span{
     .ToDo-Container{
         width: 700px;
         min-height: 500px;
-        margin-bottom: 50px;
+        margin-bottom: 40px;
     }
 
     .Schedule{
@@ -149,7 +149,7 @@ span{
     .ToDo-Container{
         width: 600px;
         min-height: 500px;
-        margin-bottom: 50px;
+        margin-bottom: 40px;
     }
 
     .Schedule{
@@ -162,7 +162,7 @@ span{
     .ToDo-Container{
         width: 350px;
         min-height: 500px;
-        margin-bottom: 50px;
+        margin-bottom: 40px;
     }
 
     .Schedule{
@@ -203,7 +203,7 @@ span{
     .ToDo-Container{
         width: 320px;
         min-height: 500px;
-        margin-bottom: 50px;
+        margin-bottom: 40px;
         
     }
 
