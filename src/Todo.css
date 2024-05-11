@@ -112,8 +112,8 @@ span{
 }
 
 .note{
-    margin: 0;
-    font-size: 25px;
+    margin-right: 10px;
+    font-size: 30px;
     color: rgb(0, 191, 255);
 }
 
@@ -121,6 +121,34 @@ span{
     max-width: 20%;
     margin-left: -5px;
     font-size: 20px;
+}
+
+.emoji-container {
+    position: absolute;
+    left: 39%;
+    transform: translateY(-204%);
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    border: 2px solid rgba(0, 123, 255, 0.271);
+    box-shadow: 0 2px 5px rgba(93, 162, 236, 0.155);
+    z-index: 999; /* Ensure the container appears above other elements */
+    min-height: 220px; /* Adjust the height as needed */
+    overflow-y: auto; /* Add scrollbar if content exceeds container height */
+}
+
+.emoji-container span {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+
+.emoji-container span:hover {
+    opacity: 0.7;
+}
+
+.row1, .row2, .row3, .row4{
+    margin-bottom: 15px;
 }
 
 @media screen and (max-width: 1450px) {
@@ -143,6 +171,12 @@ span{
         width: 700px;
         
     }
+
+    .emoji-container {
+        position: absolute;
+        left: 20.5%;
+        transform: translateY(-100%);
+    }
 }
 
 @media screen and (max-width: 900px) {
@@ -155,6 +189,12 @@ span{
     .Schedule{
         width: 600px;
         
+    }
+
+    .emoji-container {
+        position: absolute;
+        left: 15%;
+        transform: translateY(-100%);
     }
 }
 
@@ -192,6 +232,14 @@ span{
     .ToDo-Container h1{
         font-size: 45px;
     }
+
+    .emoji-container {
+        position: absolute;
+        left: 20%;
+        transform: translateY(-115%);
+        height: 150px;
+        width: 250px;
+    }
 }
 
 @media screen and (max-width: 445px){
@@ -218,7 +266,8 @@ span{
     }
 
     .note{
-        font-size: 13px;
+        font-size: 18px;
+        margin-right: 7px;
     }
 
     .ToDo-Container h1{
@@ -231,5 +280,25 @@ span{
     
     ul li .nameToDo{
         font-size: 15px;
+    }
+
+    .emoji-container {
+        position: absolute;
+        left: 16%;
+        transform: translateY(-115%);
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .emoji-container {
+        position: absolute;
+        left: 14%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .emoji-container {
+        position: absolute;
+        left: 7%;
     }
 }
