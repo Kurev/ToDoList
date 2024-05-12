@@ -6,6 +6,7 @@ import { AiFillSchedule } from "react-icons/ai";
 import { FaCalendarDays } from "react-icons/fa6";
 import { TbPencilCheck } from "react-icons/tb"; 
 import { AiOutlineCloseCircle } from "react-icons/ai";
+import alarmSoundFile from "./assets/alarm.mp3";
 
 function MyComponent() {
     const [activities, setActivities] = useState([]);
@@ -13,6 +14,7 @@ function MyComponent() {
     const [inputTime, setInputTime] = useState("");
     const [result, setResult] = useState("");
     const [showEmojiContainer, setShowEmojiContainer] = useState(false);
+    const [alarmSound, setAlarmSound] = useState(null);
 
     useEffect(() => {
         const savedActivities = JSON.parse(localStorage.getItem('activities'));
@@ -20,6 +22,40 @@ function MyComponent() {
             setActivities(savedActivities);
         }
     }, []);
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            const currentTime = new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+            activities.forEach(activity => {
+                if (activity.time === currentTime) {
+                    playAlarmAndAlert(activity.text, activity.time);
+                }
+            });
+        }, 1000); // Check every second
+
+        return () => clearInterval(intervalId);
+    }, [activities]);
+
+    const playAlarmAndAlert = (text, time) => {
+        const audio = new Audio(alarmSoundFile);
+        audio.loop = true;
+        audio.play();
+        setAlarmSound(audio);
+
+        setTimeout(() => {
+            if (window.confirm(text)) {
+                audio.pause();
+                setAlarmSound(null);
+                deleteActivity(time);
+            }
+        }, 1000); // Delay alert by 1 second
+    };
+
+    const deleteActivity = (time) => {
+        const updatedActivities = activities.filter(activity => activity.time !== time);
+        setActivities(updatedActivities);
+        localStorage.setItem('activities', JSON.stringify(updatedActivities));
+    }
 
     const handleAddActivity = () => {
         if (!inputToDo.trim() || !inputTime.trim()) {
