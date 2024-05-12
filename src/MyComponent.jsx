@@ -5,6 +5,7 @@ import { PiNotebookBold } from "react-icons/pi";
 import { AiFillSchedule } from "react-icons/ai"; 
 import { FaCalendarDays } from "react-icons/fa6";
 import { TbPencilCheck } from "react-icons/tb"; 
+import { AiOutlineCloseCircle } from "react-icons/ai";
 
 function MyComponent() {
     const [activities, setActivities] = useState([]);
@@ -92,6 +93,10 @@ function MyComponent() {
         setShowEmojiContainer(false);
     };
 
+    const handleCloseEmojiContainer = () => {
+        setShowEmojiContainer(false);
+    };
+
     return (
         <div className="ToDo">
             <div className="Schedule">
@@ -140,6 +145,7 @@ function MyComponent() {
             </div>
             {showEmojiContainer && (
                 <div className="emoji-container show">
+                    <AiOutlineCloseCircle className="close" onClick={handleCloseEmojiContainer} />
                     <div className="row1">
                         <span onClick={() => handleEmojiClick("😎")}>😎</span>
                         <span onClick={() => handleEmojiClick("🥪")}>🥪</span>
